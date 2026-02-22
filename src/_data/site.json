@@ -19,9 +19,9 @@
     "primaryCta": { "label": "View Work", "href": "#portfolio" },
     "secondaryCta": { "label": "Our Services", "href": "#services" },
     "points": [
-      "No plugin bloat",
-      "Faster page speed",
-      "Lower maintenance risk"
+      { "point": "No plugin bloat" },
+      { "point": "Faster page speed" },
+      { "point": "Lower maintenance risk" }
     ],
     "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1300&q=80",
     "imageAlt": "Team collaborating on a website project"
