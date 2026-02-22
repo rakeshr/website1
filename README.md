@@ -36,6 +36,9 @@ One-time setup needed:
 
 After that, client can log in and edit using form fields from `/admin`.
 
+Detailed setup guide:
+- `docs/CMS_OAUTH_SETUP.md`
+
 ## Developer Commands
 
 Install:

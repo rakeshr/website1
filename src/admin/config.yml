@@ -2,7 +2,8 @@
   name: github
   repo: rakeshr/website1
   branch: main
-  base_url: https://YOUR-OAUTH-SERVER.example.com
+  site_domain: rakeshr.github.io
+  base_url: https://YOUR-PROXY.yourdomain.com
   auth_endpoint: /auth
 
 site_url: https://rakeshr.github.io/website1/
