@@ -19,6 +19,7 @@ collections:
       - file: src/_data/site.json
         label: Main Page Content
         name: site
+        format: json
         fields:
           - { label: Site Title, name: siteTitle, widget: string }
           - { label: Page Title, name: pageTitle, widget: string }
@@ -46,7 +47,7 @@ collections:
               - label: Hero Points
                 name: points
                 widget: list
-                field: { label: Point, name: point, widget: string }
+                field: { label: Point, widget: string }
               - { label: Hero Image URL, name: image, widget: string }
               - { label: Hero Image Alt, name: imageAlt, widget: string }
 
