@@ -108,11 +108,14 @@ layout: layout.njk
         </div>
       </article>
       <article class="contact-card">
-        <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We will contact you soon.');">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Email Address" required>
-          <input type="text" placeholder="Project Type (Business / Ecommerce / Portfolio)">
-          <textarea placeholder="Tell us about your project"></textarea>
+        <form class="form" action="https://formsubmit.co/hello@wppixelstudio.com" method="POST">
+          <input type="hidden" name="_subject" value="New Website Inquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://rakeshr.github.io/website1/?sent=1">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="project_type" placeholder="Project Type (Business / Ecommerce / Portfolio)">
+          <textarea name="message" placeholder="Tell us about your project"></textarea>
           <button class="btn btn-primary" type="submit">Send Inquiry</button>
         </form>
       </article>
