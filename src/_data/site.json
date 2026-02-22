@@ -1,0 +1,92 @@
+﻿{
+  "siteTitle": "WP Pixel Studio",
+  "pageTitle": "WP Agency Portfolio",
+  "description": "A clean one-page agency portfolio built with Eleventy and deployed on GitHub Pages.",
+  "theme": {
+    "primary": "#2271b1",
+    "primaryDark": "#145180"
+  },
+  "navigation": [
+    { "label": "Services", "href": "#services" },
+    { "label": "Portfolio", "href": "#portfolio" },
+    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "kicker": "GitHub Pages Agency Portfolio",
+    "title": "Fast, secure websites built on GitHub Pages instead of WordPress.",
+    "lead": "We design and launch lightweight business websites that are easier to maintain, safer from plugin risks, and faster to load.",
+    "primaryCta": { "label": "View Work", "href": "#portfolio" },
+    "secondaryCta": { "label": "Our Services", "href": "#services" },
+    "points": [
+      "No plugin bloat",
+      "Faster page speed",
+      "Lower maintenance risk"
+    ],
+    "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1300&q=80",
+    "imageAlt": "Team collaborating on a website project"
+  },
+  "services": [
+    {
+      "icon": "fa-solid fa-pen-ruler",
+      "title": "UI/UX Design",
+      "text": "Wireframes and visual systems focused on clear messaging and stronger conversion paths."
+    },
+    {
+      "icon": "fa-solid fa-code",
+      "title": "Static Site Development",
+      "text": "Production-grade static websites built with clean code and Git-based publishing."
+    },
+    {
+      "icon": "fa-solid fa-gauge-high",
+      "title": "Speed & SEO",
+      "text": "Performance tuning, technical SEO, and analytics setup for measurable growth."
+    }
+  ],
+  "projects": [
+    {
+      "title": "SaaS Landing Revamp",
+      "text": "+43% demo requests in 6 weeks.",
+      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1300&q=80",
+      "alt": "SaaS marketing website project"
+    },
+    {
+      "title": "Ecommerce Store",
+      "text": "Optimized product pages and faster checkout flow.",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1300&q=80",
+      "alt": "Ecommerce website on laptop"
+    },
+    {
+      "title": "Corporate Rebrand Site",
+      "text": "Modernized company website across multiple service pages.",
+      "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80",
+      "alt": "Corporate team website"
+    }
+  ],
+  "stats": [
+    { "value": "120+", "label": "Projects Delivered" },
+    { "value": "98%", "label": "Client Satisfaction" },
+    { "value": "1.9s", "label": "Avg. Load Time" },
+    { "value": "6+", "label": "Years Experience" }
+  ],
+  "testimonials": [
+    {
+      "quote": "Their site delivery process was smooth. We now have a faster, cleaner website with fewer technical issues.",
+      "author": "Sarah M. - Marketing Director"
+    },
+    {
+      "quote": "Excellent communication and execution. The final site reflects our brand perfectly and performs better.",
+      "author": "Daniel K. - Founder"
+    }
+  ],
+  "contact": {
+    "title": "Let's Build Your Next Website",
+    "text": "Share your goals and timeline. We will respond with a clear roadmap and estimate.",
+    "email": "hello@wppixelstudio.com",
+    "phone": "+1 (555) 123-9876",
+    "location": "New York, United States"
+  },
+  "footer": {
+    "copyright": "© 2026 WP Pixel Studio. All rights reserved."
+  }
+}

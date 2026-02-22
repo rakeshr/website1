@@ -1,0 +1,132 @@
+﻿---
+layout: layout.njk
+---
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home"><i class="fa-brands fa-wordpress-simple"></i>{{ site.siteTitle }}</a>
+    <nav class="menu">
+      {% for item in site.navigation %}
+      <a href="{{ item.href }}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <a class="btn btn-primary" href="#contact">Book a Call</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="kicker">{{ site.hero.kicker }}</span>
+        <h1>{{ site.hero.title }}</h1>
+        <p class="lead">{{ site.hero.lead }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="{{ site.hero.primaryCta.href }}">{{ site.hero.primaryCta.label }}</a>
+          <a class="btn btn-outline" href="{{ site.hero.secondaryCta.href }}">{{ site.hero.secondaryCta.label }}</a>
+        </div>
+        <div class="hero-points">
+          {% for point in site.hero.points %}
+          <span><i class="fa-solid fa-check"></i>{{ point }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="hero-shot">
+        <img src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}">
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What We Do</h2>
+        <p>From strategy to launch, we handle the full website lifecycle with a performance-first process.</p>
+      </div>
+      <div class="cards">
+        {% for service in site.services %}
+        <article class="card">
+          <div class="icon"><i class="{{ service.icon }}"></i></div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected Projects</h2>
+        <p>A snapshot of websites we crafted for agencies, creators, and product companies.</p>
+      </div>
+      <div class="portfolio-grid">
+        {% for project in site.projects %}
+        <article class="work">
+          <img src="{{ project.image }}" alt="{{ project.alt }}">
+          <div class="work-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.text }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="stats">
+        {% for stat in site.stats %}
+        <div class="stat"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>Client Feedback</h2>
+        <p>Trusted by teams that need reliable execution and measurable results.</p>
+      </div>
+      <div class="quotes">
+        {% for item in site.testimonials %}
+        <article class="quote">
+          <p>"{{ item.quote }}"</p>
+          <small>{{ item.author }}</small>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-wrap">
+      <article class="contact-card">
+        <h3>{{ site.contact.title }}</h3>
+        <p>{{ site.contact.text }}</p>
+        <div class="contact-list">
+          <span><i class="fa-solid fa-envelope"></i>{{ site.contact.email }}</span>
+          <span><i class="fa-solid fa-phone"></i>{{ site.contact.phone }}</span>
+          <span><i class="fa-solid fa-location-dot"></i>{{ site.contact.location }}</span>
+        </div>
+      </article>
+      <article class="contact-card">
+        <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We will contact you soon.');">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="Project Type (Business / Ecommerce / Portfolio)">
+          <textarea placeholder="Tell us about your project"></textarea>
+          <button class="btn btn-primary" type="submit">Send Inquiry</button>
+        </form>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <p>{{ site.footer.copyright }}</p>
+    <div class="social">
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+</footer>
