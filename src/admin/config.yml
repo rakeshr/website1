@@ -1,0 +1,97 @@
+﻿backend:
+  name: github
+  repo: rakeshr/website1
+  branch: main
+  base_url: https://YOUR-OAUTH-SERVER.example.com
+  auth_endpoint: /auth
+
+site_url: https://rakeshr.github.io/website1/
+display_url: https://rakeshr.github.io/website1/
+publish_mode: simple
+media_folder: src/assets/uploads
+public_folder: /website1/assets/uploads
+
+collections:
+  - name: site_content
+    label: Site Content
+    files:
+      - file: src/_data/site.json
+        label: Main Page Content
+        name: site
+        fields:
+          - { label: Site Title, name: siteTitle, widget: string }
+          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: Description, name: description, widget: text }
+
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Kicker, name: kicker, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Lead Text, name: lead, widget: text }
+              - label: Primary CTA
+                name: primaryCta
+                widget: object
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+              - label: Secondary CTA
+                name: secondaryCta
+                widget: object
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+              - label: Hero Points
+                name: points
+                widget: list
+                field: { label: Point, name: point, widget: string }
+              - { label: Hero Image URL, name: image, widget: string }
+              - { label: Hero Image Alt, name: imageAlt, widget: string }
+
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: Icon Class, name: icon, widget: string, hint: "Example: fa-solid fa-code" }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+              - { label: Image URL, name: image, widget: string }
+              - { label: Image Alt, name: alt, widget: string }
+
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Author, name: author, widget: string }
+
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: Location, name: location, widget: string }
+
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Copyright, name: copyright, widget: string }

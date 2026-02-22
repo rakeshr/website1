@@ -1,22 +1,42 @@
-﻿# Website1 (Eleventy + GitHub Pages)
+﻿# Website1 (Eleventy + GitHub Pages + Decap CMS)
 
-This site is now powered by Eleventy and deployed with GitHub Actions.
+This site is powered by Eleventy and deployed with GitHub Actions.
 
-## For Client (Beginner Editing)
+## Live URLs
 
-Edit only this file:
+- Website: `https://rakeshr.github.io/website1/`
+- Admin (CMS UI): `https://rakeshr.github.io/website1/admin/`
+
+## Client Editing Options
+
+### Option 1 (Works now): Edit JSON on GitHub
+
+Edit only:
 - `src/_data/site.json`
 
-How to edit:
+Steps:
 1. Open repository on GitHub.
 2. Open `src/_data/site.json`.
 3. Click the pencil icon.
-4. Change text, image links, or contact values.
+4. Update text/image URLs/contact details.
 5. Commit changes.
 
-The website auto-updates in about 1-2 minutes.
+The website auto-updates in 1-2 minutes.
 
-## For Developer
+### Option 2 (CMS Screen): Use `/admin`
+
+`/admin` is configured with Decap CMS, but GitHub Pages requires an OAuth bridge for login.
+
+One-time setup needed:
+1. Create a GitHub OAuth App.
+2. Deploy an OAuth bridge endpoint.
+3. Update `src/admin/config.yml`:
+   - `base_url`
+   - `auth_endpoint`
+
+After that, client can log in and edit using form fields from `/admin`.
+
+## Developer Commands
 
 Install:
 - `npm.cmd install`

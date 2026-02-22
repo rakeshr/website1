@@ -1,5 +1,6 @@
 ﻿module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
 
   return {
     dir: {
