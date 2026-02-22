@@ -3,240 +3,569 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Website1</title>
-  <meta name="description" content="A fast single-page static website ready for GitHub Pages.">
+  <title>WP Agency Portfolio</title>
+  <meta name="description" content="A clean one-page WordPress agency portfolio website.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     :root {
-      --bg-1: #f7f3ea;
-      --bg-2: #dde8d5;
-      --ink: #18221a;
-      --muted: #4c5a4f;
-      --accent: #d76a2c;
-      --accent-2: #2f6f4f;
-      --card: #fffaf0cc;
-      --border: #2c3d3099;
-      --shadow: 0 18px 40px -24px #1b2a1d;
+      --wp-blue: #2271b1;
+      --wp-blue-dark: #145180;
+      --ink: #0f1f2b;
+      --muted: #5e7384;
+      --line: #dce7f0;
+      --surface: #f4f9ff;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px -28px rgba(19, 58, 89, 0.35);
     }
 
     * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      color: var(--ink);
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      background:
-        radial-gradient(800px 500px at 10% -10%, #f3b78f66, transparent),
-        radial-gradient(900px 600px at 95% 5%, #6ca77a44, transparent),
-        linear-gradient(135deg, var(--bg-1), var(--bg-2));
-      min-height: 100%;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
-      display: grid;
-      place-items: center;
-      padding: 28px 18px;
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Outfit", system-ui, sans-serif;
+      line-height: 1.6;
     }
 
-    .shell {
-      width: min(980px, 100%);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fffffff2;
-      box-shadow: var(--shadow);
-      animation: rise 700ms ease-out both;
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .brand i {
+      color: var(--wp-blue);
+      font-size: 1.35rem;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: #2e4252;
+      font-weight: 500;
+    }
+
+    .menu a:hover { color: var(--wp-blue); }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--wp-blue), var(--wp-blue-dark));
+      box-shadow: 0 12px 28px -18px rgba(24, 89, 139, 0.8);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--wp-blue);
+      border: 1px solid #bfd6ea;
     }
 
     .hero {
-      padding: 48px 24px 26px;
-      text-align: center;
-      position: relative;
+      padding: 78px 0 54px;
+      background:
+        radial-gradient(circle at 100% 0%, #e6f2fc 0, transparent 40%),
+        radial-gradient(circle at 0% 100%, #eaf5ff 0, transparent 36%);
     }
 
-    .tag {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .kicker {
       display: inline-block;
-      margin-bottom: 12px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: #ebf2e8;
-      color: var(--accent-2);
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
+      color: var(--wp-blue);
+      background: #e9f3fb;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1, h2 {
+      margin: 0;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-family: "DM Serif Display", Georgia, serif;
     }
 
     h1 {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.1;
-      margin: 0;
-      letter-spacing: -0.02em;
+      margin-top: 14px;
+      font-size: clamp(2rem, 6vw, 3.6rem);
     }
 
     .lead {
-      max-width: 56ch;
-      margin: 14px auto 0;
+      margin: 16px 0 24px;
+      max-width: 52ch;
       color: var(--muted);
-      font-size: clamp(1rem, 2.3vw, 1.12rem);
+      font-size: clamp(1rem, 2.2vw, 1.12rem);
     }
 
-    .grid {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-points {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      color: #395266;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .hero-points span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-points i { color: var(--wp-blue); }
+
+    .hero-shot {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #cfe1ef;
+      box-shadow: var(--shadow);
+      background: #dbeeff;
+    }
+
+    section { padding: 72px 0; }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      padding: 0 18px 20px;
+      gap: 16px;
     }
 
     .card {
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid #30423333;
-      background: var(--card);
-      backdrop-filter: blur(3px);
-      transform: translateY(10px);
-      opacity: 0;
-      animation: stagger 550ms ease-out forwards;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .card:nth-child(2) { animation-delay: 90ms; }
-    .card:nth-child(3) { animation-delay: 180ms; }
-
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 1rem;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #455247;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 8px 18px 30px;
-    }
-
-    button {
-      font: inherit;
-      border: 1px solid #2f6f4f66;
+    .icon {
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
-      padding: 11px 16px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: transform 180ms ease, filter 180ms ease;
+      display: grid;
+      place-items: center;
+      background: #eaf4fc;
+      color: var(--wp-blue);
+      margin-bottom: 14px;
+      font-size: 1.1rem;
     }
 
-    .primary {
-      background: linear-gradient(135deg, #d76a2c, #c95029);
-      color: #fff;
-      border-color: #b84c25;
+    .card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .ghost {
-      background: #eff5ec;
-      color: #2c5e45;
+    .work {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.04);
+    .work img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
     }
 
-    .footer {
-      padding: 12px 20px 20px;
+    .work-body { padding: 16px; }
+    .work-body h3 { margin: 0 0 6px; font-size: 1.02rem; }
+    .work-body p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfdff;
+      padding: 16px;
       text-align: center;
-      color: #516155;
-      font-size: 0.88rem;
     }
 
-    @keyframes rise {
-      from { transform: translateY(16px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--wp-blue);
+      line-height: 1.1;
     }
 
-    @keyframes stagger {
-      to { transform: translateY(0); opacity: 1; }
+    .stat span { color: #50687a; font-size: 0.92rem; }
+
+    .testimonials {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    @media (max-width: 780px) {
-      .grid {
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .quote {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .quote p { margin: 0 0 12px; color: #375062; }
+    .quote small { color: var(--muted); font-weight: 500; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 1.6rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      color: #3b5568;
+    }
+
+    .contact-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .contact-list i { color: var(--wp-blue); }
+
+    .form {
+      display: grid;
+      gap: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #c8dced;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fcfeff;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 0 32px;
+      color: #5a7183;
+      font-size: 0.92rem;
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .social a {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid #c6daeb;
+      display: grid;
+      place-items: center;
+      color: var(--wp-blue);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-wrap {
         grid-template-columns: 1fr;
-        padding-inline: 14px;
       }
 
-      .hero {
-        padding: 36px 16px 20px;
+      .cards,
+      .portfolio-grid,
+      .stats,
+      .quotes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+    }
+
+    @media (max-width: 680px) {
+      .menu { display: none; }
+      .cards,
+      .portfolio-grid,
+      .stats,
+      .quotes {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 54px; }
+      section { padding: 58px 0; }
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <span class="tag">GitHub Pages Ready</span>
-      <h1>Single File, Fully Live</h1>
-      <p class="lead">This is your starter static website. You can now ask for any content, section, color, animation, or layout changes and I will update this file directly.</p>
-    </section>
-
-    <section class="grid">
-      <article class="card">
-        <h2>Fast Setup</h2>
-        <p>One `index.html` file is enough to publish and share your website in minutes.</p>
-      </article>
-      <article class="card">
-        <h2>Easy Customization</h2>
-        <p>Change text, images, buttons, colors, and spacing with simple edits.</p>
-      </article>
-      <article class="card">
-        <h2>Mobile Friendly</h2>
-        <p>Responsive layout works across phones, tablets, and desktop screens.</p>
-      </article>
-    </section>
-
-    <div class="actions">
-      <button class="primary" id="cta">Click Me</button>
-      <button class="ghost" id="theme">Toggle Warm/Cool</button>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home"><i class="fa-brands fa-wordpress-simple"></i>WP Pixel Studio</a>
+      <nav class="menu">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Book a Call</a>
     </div>
+  </header>
 
-    <footer class="footer" id="status">Status: Ready for your first change request.</footer>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">WordPress Agency Portfolio</span>
+          <h1>Clean, high-converting WordPress websites for serious businesses.</h1>
+          <p class="lead">We design, build, and optimize modern WordPress experiences that load fast, rank better, and convert visitors into customers.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#portfolio">View Work</a>
+            <a class="btn btn-outline" href="#services">Our Services</a>
+          </div>
+          <div class="hero-points">
+            <span><i class="fa-solid fa-check"></i>Custom Theme Builds</span>
+            <span><i class="fa-solid fa-check"></i>WooCommerce Ready</span>
+            <span><i class="fa-solid fa-check"></i>SEO + Speed Focused</span>
+          </div>
+        </div>
+        <div class="hero-shot">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1300&q=80" alt="Team working on website strategy">
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>What We Do</h2>
+          <p>From strategy to launch, we handle the full website lifecycle with a performance-first process.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h3>UI/UX Design</h3>
+            <p>Wireframes, visual systems, and conversion-focused interfaces tailored to your brand.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-code"></i></div>
+            <h3>WordPress Development</h3>
+            <p>Custom themes, blocks, and integrations built for clean code and easy content updates.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Performance & SEO</h3>
+            <p>Core Web Vitals improvements, technical SEO setup, and analytics for growth tracking.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p>A snapshot of websites we crafted for agencies, creators, and product companies.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1300&q=80" alt="Startup marketing website">
+            <div class="work-body">
+              <h3>SaaS Landing Revamp</h3>
+              <p>+43% demo requests in 6 weeks.</p>
+            </div>
+          </article>
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1300&q=80" alt="Ecommerce website on laptop">
+            <div class="work-body">
+              <h3>WooCommerce Store</h3>
+              <p>Redesigned checkout and boosted revenue per visitor.</p>
+            </div>
+          </article>
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80" alt="Corporate team website project">
+            <div class="work-body">
+              <h3>Corporate Rebrand Site</h3>
+              <p>Modernized digital presence across 30+ pages.</p>
+            </div>
+          </article>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>120+</strong><span>Projects Delivered</span></div>
+          <div class="stat"><strong>98%</strong><span>Client Satisfaction</span></div>
+          <div class="stat"><strong>1.9s</strong><span>Avg. Load Time</span></div>
+          <div class="stat"><strong>6+</strong><span>Years Experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Client Feedback</h2>
+          <p>Trusted by teams that need reliable execution and measurable results.</p>
+        </div>
+        <div class="quotes">
+          <article class="quote">
+            <p>“Their WordPress build quality is excellent. Our site became faster, cleaner, and much easier for our team to manage.”</p>
+            <small>Sarah M. - Marketing Director</small>
+          </article>
+          <article class="quote">
+            <p>“Great communication and attention to detail. The new site finally matches the premium feel of our brand.”</p>
+            <small>Daniel K. - Founder, D&Co Studio</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-wrap">
+        <article class="contact-card">
+          <h3>Let’s Build Your Next WordPress Website</h3>
+          <p>Share your goals and timeline. We will respond with a plan, estimate, and launch roadmap.</p>
+          <div class="contact-list">
+            <span><i class="fa-solid fa-envelope"></i>hello@wppixelstudio.com</span>
+            <span><i class="fa-solid fa-phone"></i>+1 (555) 123-9876</span>
+            <span><i class="fa-solid fa-location-dot"></i>New York, United States</span>
+          </div>
+        </article>
+        <article class="contact-card">
+          <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We will contact you soon.');">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Project Type (Business / Ecommerce / Portfolio)">
+            <textarea placeholder="Tell us about your project"></textarea>
+            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+          </form>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const status = document.getElementById('status');
-    const cta = document.getElementById('cta');
-    const theme = document.getElementById('theme');
-
-    cta.addEventListener('click', () => {
-      status.textContent = 'Status: Nice, interaction is working.';
-    });
-
-    let cool = false;
-    theme.addEventListener('click', () => {
-      cool = !cool;
-      const root = document.documentElement;
-      if (cool) {
-        root.style.setProperty('--bg-1', '#eaf1f7');
-        root.style.setProperty('--bg-2', '#d7e0ef');
-        root.style.setProperty('--accent', '#2968a3');
-        root.style.setProperty('--accent-2', '#244f79');
-        status.textContent = 'Status: Cool palette active.';
-      } else {
-        root.style.setProperty('--bg-1', '#f7f3ea');
-        root.style.setProperty('--bg-2', '#dde8d5');
-        root.style.setProperty('--accent', '#d76a2c');
-        root.style.setProperty('--accent-2', '#2f6f4f');
-        status.textContent = 'Status: Warm palette active.';
-      }
-    });
-  </script>
+  <footer>
+    <div class="container foot">
+      <p>© 2026 WP Pixel Studio. All rights reserved.</p>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
