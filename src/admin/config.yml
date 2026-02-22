@@ -3,7 +3,7 @@
   repo: rakeshr/website1
   branch: main
   site_domain: rakeshr.github.io
-  base_url: https://website1-rakeshr.workers.dev
+  base_url: https://website1-cms-auth.website1-rakeshr.workers.dev
   auth_endpoint: /auth
 
 site_url: https://rakeshr.github.io/website1/
