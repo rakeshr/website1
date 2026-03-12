@@ -1,135 +1,235 @@
-﻿---
+---
 layout: layout.njk
 ---
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="#home"><i class="fa-brands fa-wordpress-simple"></i>{{ site.siteTitle }}</a>
-    <nav class="menu">
-      {% for item in site.navigation %}
+
+{# ── TOP UTILITY BAR ─────────────────────────────────────────────────── #}
+<div class="utility-bar">
+  <div class="container utility-inner">
+    <span></span>
+    <nav class="utility-nav">
+      {% for item in site.navigation.utility %}
+      <a href="{{ item.href }}">{{ item.label }}</a>
+      {% endfor %}
+      <a class="btn-kontakt" href="#contact">Kontakt</a>
+    </nav>
+  </div>
+</div>
+
+{# ── MAIN HEADER ─────────────────────────────────────────────────────── #}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#home">
+      <span class="logo-mark">BLC</span>
+      <span class="logo-text">{{ site.siteTitle }}</span>
+    </a>
+    <nav class="main-nav">
+      {% for item in site.navigation.main %}
       <a href="{{ item.href }}">{{ item.label }}</a>
       {% endfor %}
     </nav>
-    <a class="btn btn-primary" href="#contact">Book a Call</a>
+    <button class="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
 
 <main id="home">
+
+  {# ── HERO ─────────────────────────────────────────────────────────── #}
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="kicker">{{ site.hero.kicker }}</span>
+    <div class="hero-bg-accent"></div>
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <div class="hero-rule"></div>
         <h1>{{ site.hero.title }}</h1>
-        <p class="lead">{{ site.hero.lead }}</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="{{ site.hero.primaryCta.href }}">{{ site.hero.primaryCta.label }}</a>
-          <a class="btn btn-outline" href="{{ site.hero.secondaryCta.href }}">{{ site.hero.secondaryCta.label }}</a>
-        </div>
-        <div class="hero-points">
-          {% for point in site.hero.points %}
-          <span><i class="fa-solid fa-check"></i>{{ point.point }}</span>
-          {% endfor %}
-        </div>
+        <p class="hero-lead">{{ site.hero.lead1 }}</p>
+        <p class="hero-lead hero-lead--sm">{{ site.hero.lead2 }}</p>
+        <a class="btn btn-primary hero-cta" href="{{ site.hero.cta.href }}">
+          {{ site.hero.cta.label }}
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
-      <div class="hero-shot">
-        <img src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}">
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-head">
-        <h2>What We Do</h2>
-        <p>From strategy to launch, we handle the full website lifecycle with a performance-first process.</p>
-      </div>
-      <div class="cards">
-        {% for service in site.services %}
-        <article class="card">
-          <div class="icon"><i class="{{ service.icon }}"></i></div>
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.text }}</p>
-        </article>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
-        <p>A snapshot of websites we crafted for agencies, creators, and product companies.</p>
-      </div>
-      <div class="portfolio-grid">
-        {% for project in site.projects %}
-        <article class="work">
-          <img src="{{ project.image }}" alt="{{ project.alt }}">
-          <div class="work-body">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.text }}</p>
+      <div class="hero-visual">
+        <div class="hero-img-frame">
+          <img src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}">
+          <div class="hero-img-badge">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Integriertes<br>Management-System</span>
           </div>
-        </article>
-        {% endfor %}
-      </div>
-      <div class="stats">
-        {% for stat in site.stats %}
-        <div class="stat"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="section-head">
-        <h2>Client Feedback</h2>
-        <p>Trusted by teams that need reliable execution and measurable results.</p>
-      </div>
-      <div class="quotes">
-        {% for item in site.testimonials %}
-        <article class="quote">
-          <p>"{{ item.quote }}"</p>
-          <small>{{ item.author }}</small>
-        </article>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container contact-wrap">
-      <article class="contact-card">
-        <h3>{{ site.contact.title }}</h3>
-        <p>{{ site.contact.text }}</p>
-        <div class="contact-list">
-          <span><i class="fa-solid fa-envelope"></i>{{ site.contact.email }}</span>
-          <span><i class="fa-solid fa-phone"></i>{{ site.contact.phone }}</span>
-          <span><i class="fa-solid fa-location-dot"></i>{{ site.contact.location }}</span>
         </div>
-      </article>
-      <article class="contact-card">
-        <form class="form" action="https://formsubmit.co/me@rakesh.in" method="POST">
-          <input type="hidden" name="_subject" value="New Website Inquiry">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://rakeshr.github.io/website1/?sent=1">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="project_type" placeholder="Project Type (Business / Ecommerce / Portfolio)">
-          <textarea name="message" placeholder="Tell us about your project"></textarea>
-          <button class="btn btn-primary" type="submit">Send Inquiry</button>
-        </form>
-      </article>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f5f8fc"/></svg>
     </div>
   </section>
+
+  {# ── APPROACH ─────────────────────────────────────────────────────── #}
+  <section id="about" class="approach">
+    <div class="container approach-layout">
+      <div class="approach-label">
+        <span class="section-tag">Unser Ansatz</span>
+        <div class="vertical-rule"></div>
+      </div>
+      <div class="approach-body">
+        <h2>{{ site.approach.title }}</h2>
+        <div class="approach-text-cols">
+          <p>{{ site.approach.text1 }}</p>
+          <p>{{ site.approach.text2 }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ── SERVICES + NEWS ──────────────────────────────────────────────── #}
+  <section id="services" class="services-news">
+    <div class="container sn-layout">
+
+      <div class="sn-services">
+        <div class="sn-header">
+          <span class="section-tag">Leistungen</span>
+          <h2>{{ site.servicesSection.title }}</h2>
+          <p>{{ site.servicesSection.text }}</p>
+        </div>
+        <ul class="service-list">
+          {% for svc in site.services %}
+          <li class="service-item">
+            <a href="{{ svc.href }}">
+              <span class="svc-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              <span>{{ svc.label }}</span>
+              <span class="svc-line"></span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="sn-divider"></div>
+
+      <div class="sn-news">
+        <div class="sn-header">
+          <span class="section-tag">Aktuelles</span>
+          <h2>{{ site.news.title }}</h2>
+        </div>
+        <div class="news-card">
+          <div class="news-icon"><i class="fa-regular fa-newspaper"></i></div>
+          <p>{{ site.news.text }}</p>
+          <a class="news-link" href="{{ site.news.cta.href }}">
+            <i class="fa-solid fa-arrow-right"></i> {{ site.news.cta.label }}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {# ── TESTIMONIALS ─────────────────────────────────────────────────── #}
+  <section id="testimonials" class="testimonials">
+    <div class="testimonials-bg"></div>
+    <div class="container testimonials-layout">
+      <div class="testimonials-label">
+        <span class="section-tag section-tag--light">Kundenstimmen</span>
+        <h2>Kundenstimmen / Vertrauen</h2>
+      </div>
+      {% for item in site.testimonials %}
+      <div class="testimonial-block">
+        <blockquote class="t-quote">
+          <i class="fa-solid fa-quote-left t-quote-icon"></i>
+          <p>{{ item.quote }}</p>
+        </blockquote>
+        <div class="t-author">
+          <img src="{{ item.image }}" alt="{{ item.author }}" class="t-avatar">
+          <div class="t-meta">
+            <strong>{{ item.author }}</strong>
+            <span>{{ item.role }}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="t-cta-wrap">
+        <a class="btn btn-outline-light" href="{{ site.testimonialsCta.href }}">
+          {{ site.testimonialsCta.label }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {# ── CONTACT ──────────────────────────────────────────────────────── #}
+  <section id="contact" class="contact">
+    <div class="container contact-layout">
+      <div class="contact-info">
+        <span class="section-tag">Kontakt</span>
+        <h2>Jetzt Erstgespräch vereinbaren</h2>
+        <p>Teilen Sie Ihre Ziele mit uns. Wir melden uns mit einem klaren Fahrplan.</p>
+        <address>
+          <p class="addr-company">{{ site.contact.company }}</p>
+          <p>{{ site.contact.address }}<br>{{ site.contact.city }}</p>
+          <p>
+            <a href="tel:{{ site.contact.phone1 }}"><i class="fa-solid fa-phone"></i> {{ site.contact.phone1 }}</a><br>
+            <a href="tel:{{ site.contact.phone2 }}"><i class="fa-solid fa-mobile-screen-button"></i> {{ site.contact.phone2 }}</a>
+          </p>
+          <p><a href="mailto:{{ site.contact.email }}"><i class="fa-solid fa-envelope"></i> {{ site.contact.email }}</a></p>
+          <p><a href="https://{{ site.contact.website }}" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> {{ site.contact.website }}</a></p>
+        </address>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" action="https://formsubmit.co/info@bl-con.ch" method="POST">
+          <input type="hidden" name="_subject" value="Erstgespräch Anfrage">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" placeholder="Ihr Name" required></label>
+            <label>E-Mail<input type="email" name="email" placeholder="ihre@email.ch" required></label>
+          </div>
+          <label>Unternehmen<input type="text" name="company" placeholder="Ihr Unternehmen"></label>
+          <label>Nachricht<textarea name="message" placeholder="Womit können wir Ihnen helfen?"></textarea></label>
+          <button class="btn btn-primary" type="submit">Nachricht senden <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <div class="container foot">
-    <p>{{ site.footer.copyright }}</p>
-    <div class="social">
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+{# ── FOOTER ───────────────────────────────────────────────────────────── #}
+<footer class="site-footer">
+  <div class="container footer-layout">
+
+    <div class="footer-brand">
+      <a class="logo logo--light" href="#home">
+        <span class="logo-mark">BLC</span>
+        <span class="logo-text">{{ site.siteTitle }}</span>
+      </a>
+      <address class="footer-address">
+        <p>{{ site.contact.company }}</p>
+        <p>{{ site.contact.address }}<br>{{ site.contact.city }}</p>
+        <p>{{ site.contact.phone1 }}<br>{{ site.contact.phone2 }}</p>
+        <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+        <p><a href="https://{{ site.contact.website }}" target="_blank" rel="noopener">{{ site.contact.website }}</a></p>
+      </address>
     </div>
+
+    {% for col in site.footer.columns %}
+    <div class="footer-col">
+      <h4>{{ col.title }}</h4>
+      <ul>
+        {% for link in col.links %}
+        <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+
+    <div class="footer-col footer-social-col">
+      <h4>Social</h4>
+      <div class="footer-social">
+        {% for s in site.footer.social %}
+        <a href="{{ s.href }}" aria-label="{{ s.label }}" class="social-icon">
+          <i class="{{ s.icon }}"></i>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="container">{{ site.footer.copyright }}</div>
   </div>
 </footer>

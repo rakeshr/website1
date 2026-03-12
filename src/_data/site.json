@@ -1,128 +1,102 @@
 {
-  "contact": {
-    "title": "Let's Build Your Next Website",
-    "text": "Share your goals and timeline. We will respond with a clear roadmap and estimate.",
-    "email": "hello@wppixelstudio.com",
-    "phone": "+1 (555) 123-9876",
-    "location": "New York, United States"
-  },
-  "pageTitle": "WP Agency Portfolio",
+  "pageTitle": "Blue Line Consulting GmbH – Zukunft gestalten. Wirkung entfalten.",
+  "description": "Blue Line Consulting verbindet Future Management, Geschäftsprozesse, Digitalisierung, Networking und Nachfolge zu einem integrierten Ansatz.",
+  "siteTitle": "Blue Line Consulting",
   "theme": {
-    "primary": "#2271b1",
-    "primaryDark": "#145180"
+    "primary": "#0d2137",
+    "accent": "#2271b1"
   },
-  "siteTitle": "WP Pixel Studio",
-  "navigation": [
-    {
-      "label": "Services",
-      "href": "#services"
-    },
-    {
-      "label": "Portfolio",
-      "href": "#portfolio"
-    },
-    {
-      "label": "Testimonials",
-      "href": "#testimonials"
-    },
-    {
-      "label": "Contact",
-      "href": "#contact"
-    }
+  "navigation": {
+    "utility": [
+      { "label": "Über uns", "href": "#about" },
+      { "label": "News", "href": "#news" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "main": [
+      { "label": "Future Management & Strategie", "href": "#services" },
+      { "label": "Geschäftsprozesse & Digitalisierung", "href": "#services" },
+      { "label": "Networking Schulungen", "href": "#services" },
+      { "label": "Nachfolgeregelung", "href": "#services" },
+      { "label": "Referenzen", "href": "#testimonials" }
+    ]
+  },
+  "hero": {
+    "title": "Zukunft gestalten. Wirkung entfalten.",
+    "lead1": "Wir verbinden Future Management, Geschäftsprozesse und Digitalisierung, Networking und Nachfolge zu einem integrierten Ansatz, der Unternehmen nachhaltig stärkt – strategisch, operativ und im Markt.",
+    "lead2": "So entsteht ein integriertes Management-System, das Orientierung schafft, Verantwortung klärt und langfristige Stabilität sichert.",
+    "cta": { "label": "Jetzt Erstgespräch vereinbaren", "href": "#contact" },
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "Blue Line Consulting Berater"
+  },
+  "approach": {
+    "title": "Unser Ansatz – Vier Perspektiven. Ein integriertes System.",
+    "text1": "Zukunftsfähige Unternehmen entstehen nicht durch Einzelmassnahmen, sondern durch ein abgestimmtes Zusammenspiel von Strategie, Struktur, Markt und Verantwortung.",
+    "text2": "Future Management gibt die Richtung vor. Geschäftsprozesse und Digitalisierung sichern die Umsetzung. Networking stärkt die Position im Markt. Nachfolge sichert Stabilität und Kontinuität. So entsteht ein Management-System, das Orientierung schafft und Wirkung entfaltet."
+  },
+  "services": [
+    { "label": "Future Management & Strategie", "href": "#services" },
+    { "label": "Geschäftsprozesse & Digitalisierung", "href": "#services" },
+    { "label": "Networking & Schulungen", "href": "#services" },
+    { "label": "Nachfolgeregelung", "href": "#services" }
   ],
+  "servicesSection": {
+    "title": "Unsere Leistungen im Überblick",
+    "text": "Vier Leistungsfelder – ein System: mehr Orientierung, Effizienz und Wirkung."
+  },
+  "news": {
+    "title": "News",
+    "text": "Aus der Praxis und für die Praxis: Erfahren Sie mehr über unsere aktuellen Projekte, Veranstaltungen und Impulse aus dem Future Management / Megatrends und Trends.",
+    "cta": { "label": "Mehr entdecken", "href": "#news" }
+  },
   "testimonials": [
     {
-      "quote": "Their site delivery process was smooth. We now have a faster, cleaner website with fewer technical issues.",
-      "author": "Sarah M. - Marketing Director"
-    },
-    {
-      "quote": "Excellent communication and execution. The final site reflects our brand perfectly and performs better.",
-      "author": "Daniel K. - Founder"
+      "quote": "Im Rahmen der gemeinsamen Arbeit wurden Strukturen geschärft, Risiken transparent gemacht und kontinuierliche Verbesserungsprozesse etabliert.",
+      "author": "Marco Wüthrich",
+      "role": "Betriebsleiter, Mitglied der Geschäftsleitung",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     }
   ],
-  "projects": [
-    {
-      "title": "SaaS Landing Revamp design",
-      "text": "+43% demo requests in 6 weeks.",
-      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1300&q=80",
-      "alt": "SaaS marketing website project"
-    },
-    {
-      "title": "Ecommerce Store",
-      "text": "Optimized product pages and faster checkout flow.",
-      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1300&q=80",
-      "alt": "Ecommerce website on laptop"
-    },
-    {
-      "title": "Corporate Rebrand Site",
-      "text": "Modernized company website across multiple service pages.",
-      "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=80",
-      "alt": "Corporate team website"
-    }
-  ],
-  "hero": {
-    "kicker": "GitHub Pages Agency Portfolio Website",
-    "title": "Fast, secure websites built on GitHub Pages instead of WordPress.",
-    "lead": "We design and launch lightweight business websites that are easier to maintain, safer from plugin risks, and faster to load.",
-    "primaryCta": {
-      "label": "View Work",
-      "href": "#portfolio"
-    },
-    "secondaryCta": {
-      "label": "Our Services",
-      "href": "#services"
-    },
-    "points": [
-      {
-        "point": "No plugin bloat"
-      },
-      {
-        "point": "Faster page speed"
-      },
-      {
-        "point": "Lower maintenance risk"
-      }
-    ],
-    "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1300&q=80",
-    "imageAlt": "Team collaborating on a website project"
+  "testimonialsCta": { "label": "Mehr erfahren", "href": "#testimonials" },
+  "contact": {
+    "title": "Kontakt",
+    "company": "Blue Line Consulting GmbH",
+    "address": "Hangstrasse 39",
+    "city": "CH-3044 Innerberg / BE",
+    "phone1": "T +41 31 901 01 25",
+    "phone2": "M +41 79 423 65 61",
+    "email": "info@bl-con.ch",
+    "website": "www.bl-con.ch"
   },
   "footer": {
-    "copyright": "© 2026 WP Pixel Studio. All rights reserved."
-  },
-  "description": "A clean one-page agency portfolio built with Eleventy and deployed on GitHub Pages.",
-  "services": [
-    {
-      "icon": "fa-solid fa-pen-ruler",
-      "title": "UI/UX Design",
-      "text": "Wireframes and visual systems focused on clear messaging and stronger conversion paths."
-    },
-    {
-      "icon": "fa-solid fa-code",
-      "title": "Static Site Development",
-      "text": "Production-grade static websites built with clean code and Git-based publishing."
-    },
-    {
-      "icon": "fa-solid fa-gauge-high",
-      "title": "Speed & SEO",
-      "text": "Performance tuning, technical SEO, and analytics setup for measurable growth."
-    }
-  ],
-  "stats": [
-    {
-      "value": "120+",
-      "label": "Projects Delivered"
-    },
-    {
-      "value": "98%",
-      "label": "Client Satisfaction"
-    },
-    {
-      "value": "1.9s",
-      "label": "Avg. Load Time"
-    },
-    {
-      "value": "6+",
-      "label": "Years Experience"
-    }
-  ]
+    "copyright": "© Blue Line Consulting 2026",
+    "columns": [
+      {
+        "title": "Future Management & Strategie",
+        "links": [
+          { "label": "Geschäftsprozesse & Digitalisierung", "href": "#" },
+          { "label": "Networking Schulungen", "href": "#" },
+          { "label": "Nachfolgeregelung", "href": "#" }
+        ]
+      },
+      {
+        "title": "Über Uns",
+        "links": [
+          { "label": "Referenzen", "href": "#" },
+          { "label": "News", "href": "#" },
+          { "label": "FAQ", "href": "#" }
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "links": [
+          { "label": "Impressum", "href": "#" },
+          { "label": "Datenschutz", "href": "#" }
+        ]
+      }
+    ],
+    "social": [
+      { "icon": "fa-brands fa-linkedin-in", "href": "#", "label": "LinkedIn" },
+      { "icon": "fa-brands fa-xing", "href": "#", "label": "XING" }
+    ]
+  }
 }
